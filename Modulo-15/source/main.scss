@@ -1,0 +1,103 @@
+@use "config/reset";
+@use "config/variables";
+@use "sass:math";
+
+@function pixelToRem($targetPixel, $pixelContext: 16px) {
+  @return math.div($targetPixel, $pixelContext) + rem;
+}
+
+body {
+  background-color: variables.$bg-1;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: variables.$bg-2;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: pixelToRem(16px) 0;
+  }
+}
+
+.menu {
+  display: flex;
+
+  li {
+    font-weight: bold;
+    margin-left: pixelToRem(24px);
+  }
+
+  li a {
+    color: variables.$color;
+    text-decoration: none;
+  }
+}
+
+section {
+  padding: pixelToRem(56px) 0;
+}
+
+.products {
+  margin-top: pixelToRem(40px);
+  display: grid;
+  grid-template-columns: repeat(3, 32.66%);
+  column-gap: 1%;
+  row-gap: 4%;
+  width: 100%;
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.product-button {
+  display: block;
+  background-color: variables.$bg-3;
+  color: variables.$color;
+  text-align: center;
+  padding: pixelToRem(8px) 0;
+  border-radius: 8px;
+  margin-top: pixelToRem(8px);
+  text-decoration: none;
+
+  &:hover {
+    background-color: variables.$bg-4;
+  }
+}
+
+@media screen and (max-width: variables.$tablet) {
+  .container {
+    max-width: 80%;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 48.5%);
+    column-gap: 3%;
+  }
+}
+
+@media screen and (max-width: variables.$mobile) {
+  .products {
+    display: block;
+  }
+
+  .product-item {
+    margin-bottom: pixelToRem(32px);
+  }
+}
