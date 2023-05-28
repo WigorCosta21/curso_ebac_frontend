@@ -1,0 +1,1 @@
+const initAnimacaoScroll=()=>{const n=document.querySelectorAll("#animation");if(n.length){const t=.6*window.innerHeight;var i=()=>{n.forEach(n=>{n.getBoundingClientRect().top-t<0&&n.classList.add("ativo")})};i(),window.addEventListener("scroll",i)}};initAnimacaoScroll();
