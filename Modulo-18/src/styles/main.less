@@ -1,0 +1,65 @@
+@main-font: "Roboto", sans-serif;
+@background-content: rgba(2, 0, 1, 0.8);
+@liner-gradient: linear-gradient(to left, #092672, #9ebdff);
+@box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+
+@breakpointMobile: ~"(max-width: 600px)";
+@breakpointMobile2: ~"(max-width: 400px)";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: @main-font;
+  background: @liner-gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 90vh;
+  box-shadow: @box-shadow;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.content {
+  width: 90%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: @background-content;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .time {
+    font-size: 4rem;
+    @media @breakpointMobile {
+      font-size: 3rem;
+    }
+    @media @breakpointMobile {
+      font-size: 2rem;
+    }
+  }
+
+  .title-time {
+    font-size: 0.875rem;
+  }
+}
