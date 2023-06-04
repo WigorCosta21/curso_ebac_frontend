@@ -16,7 +16,7 @@ const startClock = setInterval(() => {
   const dateHours = dateToday.getHours()
   const dateMinutes = dateToday.getMinutes()
   const dateSeconds = dateToday.getSeconds()
-  const dateDay = dateToday.getDay()
+  const dateDay = dateToday.getDate()
   const dateMonth = dateToday.getMonth()
   const dateYear = dateToday.getFullYear()
 
