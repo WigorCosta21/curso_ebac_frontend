@@ -27,7 +27,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 90%;
-  height: 90vh;
+  height: 70vh;
   box-shadow: @box-shadow;
   color: #fff;
   border-radius: 10px;
@@ -41,6 +41,10 @@ body {
   justify-content: center;
   gap: 50px;
   background-color: @background-content;
+
+  @media @breakpointMobile {
+    height: 30vh;
+  }
 }
 
 .date {
