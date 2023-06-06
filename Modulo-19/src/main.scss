@@ -1,0 +1,19 @@
+@use "./config/reset.scss";
+
+.produto {
+  &-image {
+    width: 100%;
+  }
+  &-nome {
+    font-size: 1.2rem;
+    margin: 8px 0;
+  }
+  &-descricao {
+    color: gray;
+  }
+  &.em-destaque {
+    border: 2px solid gold;
+    padding: 8px;
+    background-color: #ffff42;
+  }
+}
